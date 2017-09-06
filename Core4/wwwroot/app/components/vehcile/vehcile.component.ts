@@ -50,7 +50,7 @@ export class VehcileFormComponent implements OnInit {
         private vechileService: vehcileService,
         private ToastyService: ToastyService) {
         route.params.subscribe(p => {
-            this.myvehcile.id = +p['id'];
+            this.myvehcile.id = +p['id'] ||0;
         });
     }
 
@@ -133,11 +133,8 @@ export class VehcileFormComponent implements OnInit {
 
     }
 
-    submit() {
+    submit() {       
         
-        //Raven.captureException(new Error(""));
-        //this.ToastyService.error({ title: 'Error', msg: 'An unexpacte', theme: 'bootstrap', showClose: true, timeout: 5000 });
-        //this.ToastyService.error({ title: 'Error', msg: 'An unexpacte', theme: 'bootstrap', showClose: true, timeout: 5000 });
         if (this.myvehcile.id) {
             this.vechileService.update(this.myvehcile).subscribe(x => {
                 this.ToastyService.success({ title: 'Success', msg: 'Vehcile Updated Successfully', theme: 'bootstrap', showClose: true, timeout: 5000 });
@@ -151,10 +148,7 @@ export class VehcileFormComponent implements OnInit {
             }, err => {
                 this.ToastyService.error({ title: 'Error', msg: 'error somehitng', theme: 'bootstrap', showClose: true, timeout: 5000 });
             });
-         //   this.vechileService.create(this.myvehcile).subscribe(
-           //     this.ToastyService.success({ title: 'Success', msg: 'Vehcile Added Successfully', theme: 'bootstrap', showClose: true, timeout: 5000 });
-                
-       // );
+        
             
         } 
     }

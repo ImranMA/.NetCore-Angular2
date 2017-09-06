@@ -94,8 +94,9 @@ export class vehcileService {
             .map(res => res.json());
     }  
 
-    delete(id:any) {        
-        return this.http.delete('/api/vehciles' + id)
+    delete(id: any) {
+        
+        return this.http.delete('/api/vehciles/' + id)
             .map(res => res.json());     
         
     }

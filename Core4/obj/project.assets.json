@@ -10827,10 +10827,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\imran.arshad\\documents\\visual studio 2017\\Projects\\Core4\\Core4\\Core4.csproj",
+      "projectUniqueName": "C:\\Work\\Training\\DotNet-Angular2\\.NetCore-Angular2\\Core4\\Core4.csproj",
       "projectName": "Core4",
-      "projectPath": "C:\\Users\\imran.arshad\\documents\\visual studio 2017\\Projects\\Core4\\Core4\\Core4.csproj",
-      "outputPath": "C:\\Users\\imran.arshad\\documents\\visual studio 2017\\Projects\\Core4\\Core4\\obj\\",
+      "projectPath": "C:\\Work\\Training\\DotNet-Angular2\\.NetCore-Angular2\\Core4\\Core4.csproj",
+      "outputPath": "C:\\Work\\Training\\DotNet-Angular2\\.NetCore-Angular2\\Core4\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

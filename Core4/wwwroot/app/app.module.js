@@ -19,6 +19,7 @@ var about_compnent_1 = require("./components/vehcile/about.compnent");
 var vehcile_list_1 = require("./components/vehcile/vehcile-list");
 var app_error_handler_1 = require("./app.error-handler");
 var pagination_component_1 = require("./components/vehcile/pagination.component");
+var view_vehicle_1 = require("./components/vehcile/view-vehicle");
 Raven.config('https://55c283ba3ad640a785d33b0aac706954@sentry.io/208882').install();
 var appRoutes = [
     {
@@ -27,11 +28,12 @@ var appRoutes = [
     {
         path: 'home/about', component: vehcile_list_1.VehcileListComponent
     },
+    { path: 'vehicles/edit/:id', component: vehcile_component_1.VehcileFormComponent },
     {
         path: 'vehciles/new', component: vehcile_component_1.VehcileFormComponent
     },
     {
-        path: 'vehciles/:id', component: vehcile_component_1.VehcileFormComponent
+        path: 'vehciles/:id', component: view_vehicle_1.ViewVehicleComponent
     },
     {
         path: 'vehciles', component: vehcile_list_1.VehcileListComponent
@@ -48,7 +50,7 @@ AppModule = __decorate([
         imports: [ng2_toasty_1.ToastyModule.forRoot(), router_1.RouterModule.forRoot(appRoutes), platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             http_1.HttpModule],
-        declarations: [app_component_1.AppComponent, vehcile_component_1.VehcileFormComponent, about_compnent_1.AboutComponent, vehcile_list_1.VehcileListComponent, pagination_component_1.PaginationComponent],
+        declarations: [app_component_1.AppComponent, vehcile_component_1.VehcileFormComponent, about_compnent_1.AboutComponent, vehcile_list_1.VehcileListComponent, pagination_component_1.PaginationComponent, view_vehicle_1.ViewVehicleComponent],
         bootstrap: [app_component_1.AppComponent],
         providers: [
             { provide: core_1.ErrorHandler, useClass: app_error_handler_1.AppErrorHandler }

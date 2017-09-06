@@ -12,6 +12,7 @@ import { AboutComponent } from "./components/vehcile/about.compnent";
 import { VehcileListComponent } from "./components/vehcile/vehcile-list";
 import { AppErrorHandler } from "./app.error-handler";
 import { PaginationComponent } from "./components/vehcile/pagination.component";
+import { ViewVehicleComponent } from "./components/vehcile/view-vehicle";
 
 
 
@@ -25,12 +26,14 @@ const appRoutes: Routes = [
     },   
     {
         path: 'home/about', component: VehcileListComponent
-    },   
+    },
+
+    { path: 'vehicles/edit/:id', component: VehcileFormComponent },
     {
         path: 'vehciles/new', component: VehcileFormComponent
     },
     {
-        path: 'vehciles/:id', component: VehcileFormComponent
+        path: 'vehciles/:id', component: ViewVehicleComponent
     },
     {
         path: 'vehciles', component: VehcileListComponent
@@ -43,7 +46,7 @@ const appRoutes: Routes = [
     imports: [ToastyModule.forRoot(), RouterModule.forRoot(appRoutes), BrowserModule,
         FormsModule,
         HttpModule],
-    declarations: [AppComponent, VehcileFormComponent, AboutComponent, VehcileListComponent, PaginationComponent],
+    declarations: [AppComponent, VehcileFormComponent, AboutComponent, VehcileListComponent, PaginationComponent, ViewVehicleComponent],
     bootstrap: [AppComponent],
     providers: [
         { provide: ErrorHandler, useClass : AppErrorHandler }

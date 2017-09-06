@@ -43,6 +43,7 @@
     <Content Include="wwwroot\app\components\vehcile\vehcile.component.js" />
     <Content Include="wwwroot\app\components\vehcile\vehcile.component.js.map" />
     <Content Include="wwwroot\app\components\vehcile\vehcile.component.ts" />
+    <Content Include="wwwroot\app\components\vehcile\view-vehicle.ts" />
     <Content Include="wwwroot\app\model\vehcile.ts" />
     <Content Include="wwwroot\app\model\vehcile\vehcile.js" />
     <Content Include="wwwroot\app\model\vehcile\vehcile.js.map" />
@@ -53,9 +54,6 @@
     <Content Include="wwwroot\app\modules\vehcile\app.module.js" />
     <Content Include="wwwroot\app\modules\vehcile\app.module.js.map" />
     <Content Include="wwwroot\app\modules\vehcile\app.module.ts" />
-    <Content Include="wwwroot\app\services\vehcile.service.js" />
-    <Content Include="wwwroot\app\services\vehcile.service.js.map" />
-    <Content Include="wwwroot\app\services\vehcile.service.ts" />
     <Content Include="wwwroot\app\services\vehcile\vehcile.service.js" />
     <Content Include="wwwroot\app\services\vehcile\vehcile.service.js.map" />
     <Content Include="wwwroot\app\services\vehcile\vehcile.service.ts" />

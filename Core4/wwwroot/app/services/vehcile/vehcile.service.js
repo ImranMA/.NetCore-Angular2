@@ -75,7 +75,7 @@ var vehcileService = (function () {
             .map(function (res) { return res.json(); });
     };
     vehcileService.prototype.delete = function (id) {
-        return this.http.delete('/api/vehciles' + id)
+        return this.http.delete('/api/vehciles/' + id)
             .map(function (res) { return res.json(); });
     };
     return vehcileService;

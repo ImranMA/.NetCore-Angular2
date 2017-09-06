@@ -37,7 +37,7 @@ var VehcileFormComponent = (function () {
             }
         };
         route.params.subscribe(function (p) {
-            _this.myvehcile.id = +p['id'];
+            _this.myvehcile.id = +p['id'] || 0;
         });
     }
     VehcileFormComponent.prototype.ngOnInit = function () {
@@ -105,9 +105,6 @@ var VehcileFormComponent = (function () {
     };
     VehcileFormComponent.prototype.submit = function () {
         var _this = this;
-        //Raven.captureException(new Error(""));
-        //this.ToastyService.error({ title: 'Error', msg: 'An unexpacte', theme: 'bootstrap', showClose: true, timeout: 5000 });
-        //this.ToastyService.error({ title: 'Error', msg: 'An unexpacte', theme: 'bootstrap', showClose: true, timeout: 5000 });
         if (this.myvehcile.id) {
             this.vechileService.update(this.myvehcile).subscribe(function (x) {
                 _this.ToastyService.success({ title: 'Success', msg: 'Vehcile Updated Successfully', theme: 'bootstrap', showClose: true, timeout: 5000 });
@@ -119,9 +116,6 @@ var VehcileFormComponent = (function () {
             }, function (err) {
                 _this.ToastyService.error({ title: 'Error', msg: 'error somehitng', theme: 'bootstrap', showClose: true, timeout: 5000 });
             });
-            //   this.vechileService.create(this.myvehcile).subscribe(
-            //     this.ToastyService.success({ title: 'Success', msg: 'Vehcile Added Successfully', theme: 'bootstrap', showClose: true, timeout: 5000 });
-            // );
         }
     };
     VehcileFormComponent.prototype.delete = function () {
