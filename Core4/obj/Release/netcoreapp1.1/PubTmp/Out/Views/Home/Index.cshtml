@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+
+}
+
+<base href="/">
+<script src="systemjs.config.js"></script>
+<script>
+            System.import('./main.js').catch(function (err) { console.error(err); });
+</script>
+
+
+<ng2-toasty [position]="'bottom-right'"></ng2-toasty>
+<my-app>Loading Data yes !</my-app>
+
+

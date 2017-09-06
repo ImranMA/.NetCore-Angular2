@@ -1,0 +1,87 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\app\app.error-handler.ts" />
+    <Content Include="wwwroot\app\app.module.js" />
+    <Content Include="wwwroot\app\app.module.js.map" />
+    <Content Include="wwwroot\app\app.module.ts" />
+    <Content Include="wwwroot\app\components\user\app.component.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\app\components\user\app.component.js.map">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\app\components\user\app.component.ts">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\app\components\user\app.usercomponent.js" />
+    <Content Include="wwwroot\app\components\user\app.usercomponent.js.map" />
+    <Content Include="wwwroot\app\components\user\app.usercomponent.ts" />
+    <Content Include="wwwroot\app\components\user\usercomponent.js" />
+    <Content Include="wwwroot\app\components\user\usercomponent.js.map" />
+    <Content Include="wwwroot\app\components\user\usercomponent.ts" />
+    <Content Include="wwwroot\app\components\vehcile\about.compnent.js" />
+    <Content Include="wwwroot\app\components\vehcile\about.compnent.js.map" />
+    <Content Include="wwwroot\app\components\vehcile\about.compnent.ts" />
+    <Content Include="wwwroot\app\components\vehcile\app.component.js" />
+    <Content Include="wwwroot\app\components\vehcile\app.component.js.map" />
+    <Content Include="wwwroot\app\components\vehcile\app.component.ts" />
+    <Content Include="wwwroot\app\components\vehcile\pagination.component.js" />
+    <Content Include="wwwroot\app\components\vehcile\pagination.component.js.map" />
+    <Content Include="wwwroot\app\components\vehcile\pagination.component.ts" />
+    <Content Include="wwwroot\app\components\vehcile\vehcile-list.js" />
+    <Content Include="wwwroot\app\components\vehcile\vehcile-list.js.map" />
+    <Content Include="wwwroot\app\components\vehcile\vehcile-list.ts" />
+    <Content Include="wwwroot\app\components\vehcile\vehcile.component.js" />
+    <Content Include="wwwroot\app\components\vehcile\vehcile.component.js.map" />
+    <Content Include="wwwroot\app\components\vehcile\vehcile.component.ts" />
+    <Content Include="wwwroot\app\model\vehcile.ts" />
+    <Content Include="wwwroot\app\model\vehcile\vehcile.js" />
+    <Content Include="wwwroot\app\model\vehcile\vehcile.js.map" />
+    <Content Include="wwwroot\app\model\vehcile\vehcile.ts" />
+    <Content Include="wwwroot\app\modules\app.module.js" />
+    <Content Include="wwwroot\app\modules\app.module.js.map" />
+    <Content Include="wwwroot\app\modules\app.module.ts" />
+    <Content Include="wwwroot\app\modules\vehcile\app.module.js" />
+    <Content Include="wwwroot\app\modules\vehcile\app.module.js.map" />
+    <Content Include="wwwroot\app\modules\vehcile\app.module.ts" />
+    <Content Include="wwwroot\app\services\vehcile.service.js" />
+    <Content Include="wwwroot\app\services\vehcile.service.js.map" />
+    <Content Include="wwwroot\app\services\vehcile.service.ts" />
+    <Content Include="wwwroot\app\services\vehcile\vehcile.service.js" />
+    <Content Include="wwwroot\app\services\vehcile\vehcile.service.js.map" />
+    <Content Include="wwwroot\app\services\vehcile\vehcile.service.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="1.2.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.1" />
+	<DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\app\shared\" />
+  </ItemGroup>
+
+</Project>
