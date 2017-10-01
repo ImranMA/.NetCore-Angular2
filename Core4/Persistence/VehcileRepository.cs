@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Core4.Core;
-using Core4.Core.Models;
+using Core4.Core.Models;    
 using Core4.Extensions;
 using Core4.Models;
 using Microsoft.EntityFrameworkCore;
@@ -56,8 +56,9 @@ namespace Core4.Persistence
             var query = context.Vehciles
                 .Include(v => v.Model)
                 .ThenInclude(m => m.Make)
-                .Include(v => v.Features)
-                .ThenInclude(vf => vf.Feature).AsQueryable();
+               // .Include(v => v.Features)
+                //.ThenInclude(vf => vf.Feature)
+                .AsQueryable();
 
 
 
@@ -68,11 +69,8 @@ namespace Core4.Persistence
                 ["contactName"] = v => v.ContactName,
                 ["id"] = v => v.Id
             };
-
-
-            if (queryObj.MakeId.HasValue)
-                query = query.Where(v => v.Model.MakeId == queryObj.MakeId);
-
+            query = query.ApplyFiltering(queryObj);
+            
             query = query.ApplyOrdering(queryObj, columnsMap);
             result.TotalItems = await query.CountAsync();
             query = query.ApplyPaging(queryObj);

@@ -10,11 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
+var auth_service_1 = require("../../services/vehcile/auth.service");
 var AppComponent = (function () {
-    function AppComponent(router) {
+    function AppComponent(auth) {
+        this.auth = auth;
         //    router.navigate(['vehciles']);
+        auth.handleAuthentication();
     }
+    AppComponent.prototype.LoginUser = function () {
+        debugger;
+        this.auth.login();
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
@@ -22,7 +28,7 @@ AppComponent = __decorate([
         selector: 'my-app',
         templateUrl: "/home/appComponent"
     }),
-    __metadata("design:paramtypes", [router_1.Router])
+    __metadata("design:paramtypes", [auth_service_1.AuthService])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

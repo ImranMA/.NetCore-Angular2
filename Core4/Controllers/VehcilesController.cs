@@ -7,6 +7,7 @@ using Core4.Controllers.Resources;
 using Core4.Core;
 using Core4.Core.Models;
 using Core4.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -30,6 +31,7 @@ namespace Core4.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public  async  Task<IActionResult> CreateVehcile([FromBody] SaveVehcileResource vehcileResouce )
         {
             
@@ -54,6 +56,7 @@ namespace Core4.Controllers
 
 
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> UpdateVehcile(int id , [FromBody] SaveVehcileResource vehcileResouce )
         {
            // throw new Exception("hey not good");
@@ -79,6 +82,7 @@ namespace Core4.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public  async Task<IActionResult> DeleteVehcile(int id)
         {  
             var vehcile = await repository.GetVehcile(id, IncludeRelated:false);

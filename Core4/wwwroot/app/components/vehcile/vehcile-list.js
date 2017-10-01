@@ -11,9 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var vehcile_service_1 = require("../../services/vehcile/vehcile.service");
+var auth_service_1 = require("../../services/vehcile/auth.service");
 var VehcileListComponent = (function () {
-    function VehcileListComponent(vechileService) {
+    function VehcileListComponent(vechileService, auth) {
         this.vechileService = vechileService;
+        this.auth = auth;
         this.PAGE_SIZE = 10;
         this.queryResult = {};
         this.query = {
@@ -88,7 +90,7 @@ VehcileListComponent = __decorate([
             vehcile_service_1.vehcileService
         ]
     }),
-    __metadata("design:paramtypes", [vehcile_service_1.vehcileService])
+    __metadata("design:paramtypes", [vehcile_service_1.vehcileService, auth_service_1.AuthService])
 ], VehcileListComponent);
 exports.VehcileListComponent = VehcileListComponent;
 //# sourceMappingURL=vehcile-list.js.map

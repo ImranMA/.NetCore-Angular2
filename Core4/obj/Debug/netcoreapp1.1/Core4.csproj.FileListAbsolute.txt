@@ -11,7 +11,7 @@ C:\Work\Training\DotNet-Angular2\.NetCore-Angular2\Core4\bin\Debug\netcoreapp1.1
 C:\Work\Training\DotNet-Angular2\.NetCore-Angular2\Core4\bin\Debug\netcoreapp1.1\Core4.runtimeconfig.dev.json
 C:\Work\Training\DotNet-Angular2\.NetCore-Angular2\Core4\bin\Debug\netcoreapp1.1\Core4.dll
 C:\Work\Training\DotNet-Angular2\.NetCore-Angular2\Core4\bin\Debug\netcoreapp1.1\Core4.pdb
-C:\Work\Training\DotNet-Angular2\.NetCore-Angular2\Core4\obj\Debug\netcoreapp1.1\Core4.csprojResolveAssemblyReference.cache
 C:\Work\Training\DotNet-Angular2\.NetCore-Angular2\Core4\obj\Debug\netcoreapp1.1\Core4.AssemblyInfo.cs
 C:\Work\Training\DotNet-Angular2\.NetCore-Angular2\Core4\obj\Debug\netcoreapp1.1\Core4.dll
 C:\Work\Training\DotNet-Angular2\.NetCore-Angular2\Core4\obj\Debug\netcoreapp1.1\Core4.pdb
+C:\Work\Training\DotNet-Angular2\.NetCore-Angular2\Core4\obj\Debug\netcoreapp1.1\Core4.csprojResolveAssemblyReference.cache

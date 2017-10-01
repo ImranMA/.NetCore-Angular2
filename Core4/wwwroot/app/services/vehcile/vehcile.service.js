@@ -33,25 +33,18 @@ var vehcileService = (function () {
         //let body = JSON.stringify(vehcile);
         //let headers = new Headers({ 'Content-Type': 'application/json' });
         //let options = new RequestOptions({ headers: headers });
+        var t = localStorage.getItem('access_token');
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', 'Bearer ' + t);
+        var options = new http_1.RequestOptions({ headers: headers });
         //let headers = new Headers();
-        //headers.append('Content-Type', 'application/json');
+        //headers.append('Authorization', 'Bearer ' + localStorage.getItem('id_token'));
         //let toAdd = JSON.stringify(vehcile);
         if (isNaN(parseFloat(vehcile.id)))
             delete vehcile.id;
-        var body = {
-            id: NaN,
-            contact: {
-                name: 'David johnn',
-                phone: 'david@g.com',
-                email: '04553'
-            },
-            features: [2, 3],
-            isRegistered: true,
-            modelId: "2",
-            makeId: "2",
-        };
+        debugger;
         //  vehcile = body;
-        return this.http.post('/api/vehciles', vehcile).map(function (res) { return res.json(); });
+        return this.http.post('/api/vehciles', vehcile, options).map(function (res) { return res.json(); });
     };
     vehcileService.prototype.getVehcile = function (id) {
         return this.http.get('/api/vehciles/' + id).map(function (res) { return res.json(); });

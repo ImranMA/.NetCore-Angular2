@@ -36,5 +36,14 @@ namespace Core4.Extensions
         }
 
 
+        public static IQueryable<Vehcile> ApplyFiltering(this IQueryable<Vehcile> query, VehcileQuery queryObj)
+        {
+            if (queryObj.MakeId.HasValue)
+                query = query.Where(v => v.Model.MakeId == queryObj.MakeId);
+
+            return query;
+
+        }
+
     }
 }

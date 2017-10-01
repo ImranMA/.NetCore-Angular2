@@ -55,6 +55,13 @@ namespace Core4.Controllers
             return PartialView();
         }
 
+        public IActionResult Charts()
+        {
+            ViewData["Message"] = "Your application description page.";
+
+            return PartialView();
+        }
+
         public IActionResult ViewVehcile()
         {
             ViewData["Message"] = "Your application description page.";

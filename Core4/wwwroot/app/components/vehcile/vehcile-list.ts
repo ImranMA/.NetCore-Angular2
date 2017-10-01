@@ -2,6 +2,7 @@
 import { Component, OnInit } from "@angular/core";
 import { KeyValuePair, Vehcile } from "../../model/vehcile/vehcile";
 import { vehcileService } from "../../services/vehcile/vehcile.service";
+import { AuthService } from "../../services/vehcile/auth.service";
 
 
 
@@ -20,7 +21,7 @@ export class VehcileListComponent implements OnInit {
     
 
 
-    constructor(private vechileService: vehcileService ){}
+    constructor(private vechileService: vehcileService, private auth: AuthService) { }
 
     private readonly PAGE_SIZE = 10;
 

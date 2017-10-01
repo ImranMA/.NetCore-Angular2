@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core4.Core.Models;
 using Core4.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,8 @@ namespace Core4.Persistence
         public DbSet<Vehcile> Vehciles { get; set; }
         public DbSet<Make> Makes { get; set; }
         public DbSet<Feature> Features { get; set; }
+
+        public DbSet<Photo> Photos { get; set; }
 
         public VegaDBContext(DbContextOptions<VegaDBContext> options):base(options)
         {

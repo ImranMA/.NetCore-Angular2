@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using Core4.Core.Models;
 
 namespace Core4.Models
 {
@@ -34,10 +35,12 @@ namespace Core4.Models
 
         public ICollection<VehcileFeature> Features { get; set; }
 
+        public ICollection<Photo> Photos { get; set; }
 
         public Vehcile()
         {
             Features = new Collection<VehcileFeature>();
+            Photos = new Collection<Photo>();
         }
     }
 }

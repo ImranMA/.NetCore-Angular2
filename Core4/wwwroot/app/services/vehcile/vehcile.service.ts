@@ -2,7 +2,7 @@
 import { Headers, RequestOptions ,Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { SaveVehcile } from "../../model/vehcile/vehcile";
-
+import { AuthHttp } from "angular2-jwt";
 
 @Injectable()
 export class vehcileService {
@@ -30,36 +30,24 @@ export class vehcileService {
         //let headers = new Headers({ 'Content-Type': 'application/json' });
         //let options = new RequestOptions({ headers: headers });
 
+        var t = localStorage.getItem('access_token');
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', 'Bearer ' + t)
+        let options = new RequestOptions({ headers: headers });
 
         //let headers = new Headers();
-        //headers.append('Content-Type', 'application/json');
+        //headers.append('Authorization', 'Bearer ' + localStorage.getItem('id_token'));
         //let toAdd = JSON.stringify(vehcile);
 
         
         
         if (isNaN(parseFloat(vehcile.id)))
             delete vehcile.id;
-
-        let body = {
-            id: NaN,
-            contact: {
-                name: 'David johnn',
-                phone: 'david@g.com',
-                email: '04553'
-            },
-            features: [2, 3],
-            isRegistered: true,
-            modelId: "2",
-            makeId :"2",
-           
-            
-        };
-
-
+        debugger
 
       //  vehcile = body;
 
-        return this.http.post('/api/vehciles', vehcile ).map(res => res.json());
+        return this.http.post('/api/vehciles', vehcile, options).map(res => res.json());
     }
 
     getVehcile(id: any) {

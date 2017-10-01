@@ -12,6 +12,8 @@ using Core4.Persistence;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using Core4.Core;
+using Core4.Core.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace Core4
 {
@@ -42,15 +44,25 @@ namespace Core4
                     .AllowCredentials());
             });
 
+            services.AddTransient<IPhotoStorage, FileSystemPhotoStorage>();
+            services.AddTransient<IPhotoService, PhotoService>();
             services.AddScoped<IVehcileRepository, VehcileRepository>();
+            services.AddScoped<IPhotoRepository, PhotoRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.Configure<PhotoSettings>(Configuration.GetSection("PhotoSettings"));
 
             services.AddAutoMapper();
             // Add framework services.
             services.AddMvc();
+
+
+          
+
             services.AddDbContext<VegaDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:Default"]));
 
-            
+
+
+
         }
         private static void HandleBranch(IApplicationBuilder app)
         {
@@ -88,8 +100,20 @@ namespace Core4
 
             app.UseStaticFiles();
 
-           // app.UseFileServer(false);
+
+            var options = new JwtBearerOptions
+            {
+                Authority= "https://coreanglr2spa.au.auth0.com/",
+                Audience = "https://api.coreanglr2spa.com"
+            };
+
+            app.UseJwtBearerAuthentication(options);
             
+            //app.UseAuthentication();
+            
+
+            // app.UseFileServer(false);
+
             app.UseStaticFiles(new StaticFileOptions
             {
                 FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "node_modules")),
@@ -99,11 +123,11 @@ namespace Core4
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Login}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
 
                 routes.MapRoute(
                   name: "spa-fallback",
-                  template: "{*url}", defaults: new { controller = "Home", action = "Login" });
+                  template: "{*url}", defaults: new { controller = "Home", action = "Index" });
             });
 
           

@@ -16,6 +16,24 @@ namespace Core4.Migrations
                 .HasAnnotation("ProductVersion", "1.1.2")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Core4.Core.Models.Photo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasMaxLength(255);
+
+                    b.Property<int?>("VehcileId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VehcileId");
+
+                    b.ToTable("Photos");
+                });
+
             modelBuilder.Entity("Core4.Models.Feature", b =>
                 {
                     b.Property<int>("Id")
@@ -102,6 +120,13 @@ namespace Core4.Migrations
                     b.HasIndex("FeatureId");
 
                     b.ToTable("VehcileFeatures");
+                });
+
+            modelBuilder.Entity("Core4.Core.Models.Photo", b =>
+                {
+                    b.HasOne("Core4.Models.Vehcile")
+                        .WithMany("Photos")
+                        .HasForeignKey("VehcileId");
                 });
 
             modelBuilder.Entity("Core4.Models.Model", b =>

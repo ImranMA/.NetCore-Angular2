@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Core4.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Core4.Controllers
 {
@@ -27,6 +28,7 @@ namespace Core4.Controllers
 
 
         [HttpGet("/api/Featrues")]
+       //[Authorize]
         public async Task<IEnumerable<KeyValuePairResource>> GetFeatures()
         {
             var Features = await context.Features.ToListAsync();

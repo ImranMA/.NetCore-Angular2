@@ -31,8 +31,11 @@
       'ng2-toasty': 'node_modules/ng2-toasty/bundles/index.umd.js',
       'raven-js': 'node_modules/raven-js',            
       'underscore': 'node_modules/underscore/underscore.js',
-      
-       
+      'auth0-js': 'node_modules/auth0-js/build/auth0.js',      
+      //'chart.js': 'node_modules/angular2-chartjs/node_modules/chart.js/src/chart.js',
+      //'angular2-chartjs': 'node_modules/angular2-chartjs/dist/chart.module.js',
+       'angular2-chartjs': 'node_modules/angular2-chartjs',
+      'chart.js': 'node_modules/chart.js/dist/Chart.bundle.js',
       
 
 
@@ -42,6 +45,10 @@
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
+        'angular2-chartjs': {
+            main: './dist/index.js',
+            defaultExtension: 'js'
+        },
       'raven-js': {
             main: 'dist/raven.js'
       },
