@@ -1,4 +1,4 @@
-# .NetCore-Angular2
+# .NetCore-Angular2 (Under Development)
 
 
 Mosh Hamedani has run the traning session on Udemy to learn .Net core and Angular 2/4.
